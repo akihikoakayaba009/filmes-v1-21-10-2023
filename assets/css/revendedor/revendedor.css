@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+body #page-content{
+    padding-top: 70px;
+}
+/* FORM */
+.form-group{
+    margin-bottom: 15px;
+}
+.input-group-text{
+    width: 50px;
+    justify-content: center;
+}
+.form-control , input{
+    height: 40px;
+}
+label{
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+/*LOGIN / CADASTRO / RECUPERAR SENHA*/
+.login{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .card{
+    border-radius: 10px;
+    width: 35%;
+}
+.login .login-icon{
+    padding-top: 10px;
+}
+.login .login-icon .site-logo{
+    max-width: 100px;
+    max-height: 39px;
+}
+.login .login-icon img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+.login .btn{
+    width: 50%;
+} 
+[data-theme=theme-1] .login .form-control:focus{
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(10, 10, 10, 0.68);
+    border: 1px solid rgba(101, 0, 0, 1);
+    color: #fff;
+}
+[data-theme=theme-1] .login .input-group-text{
+    background-color: rgba(10, 10, 10, 0.48);
+    border: 1px solid rgba(101, 0, 0, 0.8);
+    color: #fff;
+}
+.login {
+    color: #fff;
+}
+
+/* SIDEBAR PAGE CONTENT*/
+#sidebar-left{
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 270px;
+    transition: 0.5s;
+    z-index: 1031;
+} 
+#sidebar-left .sidebar-perfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    height: 150px;
+}
+#sidebar-left .sidebar-perfil .avatar{
+    width: 75px;
+    height: 75px;
+    margin-bottom: 3px;
+}
+#sidebar-left .sidebar-perfil .sidebar-text-two{
+    padding-bottom: 10px;
+}
+#sidebar-left .sidebar-list{
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+}
+#sidebar-left .list-group{
+    padding-top: 15px;
+}
+#sidebar-left .list-group .list-group-item{
+    padding: 1rem 1.25rem;
+}
+#sidebar-left .list-group .list-group-item i,
+#sidebar-left .list-group .accordion .accordion-button i{
+    width: 25px;
+}
+#sidebar-left .list-group .accordion .accordion-item .accordion-body .list-group{
+    padding: 0px 0px 0px 25px;
+}
+#sidebar-left .list-group .accordion .accordion-item .accordion-body .list-group .list-group-item{
+    padding: 10px 0px 10px 10px;
+}
+#sidebar-left .list-group .accordion .accordion-item .accordion-body .list-group .list-group-item:first-child{
+    margin-top: -10px;
+}
+
+/* PAGE CONTENT / PAGE FIXED */
+#page-fixed{
+    margin-left: 270px;
+    transition: 0.5s;
+}
+#page-fixed #navbar-top .container-fluid .d-flex i{
+   width: 18px;
+}
+/*NAVBAR TOP*/
+
+#navbar-top{
+    left: 270px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.5s;
+}
+#navbar-top .navbar-brand .navbar-logo{
+    max-width: 100px;
+    max-height: 39px;
+}
+
+/* CARD */
+.card-header-title{
+    padding: 10px;
+    margin-bottom: 12px;
+}
+.card-header-title h1{
+   margin-bottom: 0px;
+}
+
+/* CARD NAV TABS */
+
+
+/* PERFIL PAGE*/
+.perfil-info-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.perfil-info-left .perfil-info-avatar{
+    height: 120px;
+    width: 120px;
+    margin-bottom: 10px;
+}
+.perfil-image-change{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 10px;
+}
+.perfil-image-change img{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+.perfil-image-change small{
+    cursor: pointer;
+    padding-top: 3px;
+    display: block;
+}
+.perfil-info-right .list-group .list-group-item{
+    width: 100%;
+}
+.perfil-info-right .list-group .list-group-item .space-left{
+    word-break: break-all;
+}
+.perfil-info-right i{
+    width: 35px;
+}
+.perfil-info-right .space-left{
+    margin-left: 35px;
+}
+
+/* MODAL EXCLUIR */
+.modal  .modal-content .modal-header{
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+.modal .modal-content .modal-body img{
+    width: 75px;
+    height: 75px;
+    margin-bottom: 5px;
+}
+.modal .modal-content .modal-body p:first-child{
+    margin-bottom: 10px;
+}
+.modal .modal-content .modal-body p{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.image-avatar-list{
+    width: 60px;
+    height: 60px;
+}
+.image-avatar-change{
+    margin-bottom: 2px;
+}
+
+/* CARD NAV TABS */
+.nav-tabs{
+    display: inline-grid;
+    width: 100%;
+    gap: 2px;
+} 
+.nav-tabs.tabs-two{
+    grid-template-columns: repeat(2, 1fr);
+}
+.nav-tabs.tabs-three{
+    grid-template-columns: repeat(3, 1fr);
+}
+.nav-tabs .nav-item{
+    width: 100% !important;
+}
+.nav-tabs .nav-item .btn{
+    width: 100%;
+}

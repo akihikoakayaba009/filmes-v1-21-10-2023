@@ -1,0 +1,153 @@
+RewriteEngine On
+RewriteRule %{REQUEST_FILENAME} !-f
+RewriteRule %{REQUEST_FILENAME} !-d
+
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://siteurl.local/$1 [R,L]
+  
+ErrorDocument 404 /404.php
+RewriteRule ^sitemap.xml$ sitemap.php
+
+#index
+RewriteRule ^$ index.php?dir=index
+RewriteRule ^premium$ /public/premium.php?dir=premium
+RewriteRule ^checkout/premium/([0-9]+)$ /public/checkout.php?dir=checkout&premium_id=$1
+
+#user
+RewriteRule ^user/$ /user/index.php?dir=user_home
+RewriteRule ^user/login$ /user/user_login.php?dir=user_login
+RewriteRule ^user/cadastro$ /user/user_cadastro.php?dir=user_cadastro
+RewriteRule ^user/recuperar-senha-ps-1$ /user/user_recuperar_senha_ps1.php?dir=user_recuperar_senha_ps1
+RewriteRule ^user/recuperar-senha-ps-2/([0-9-a-z-A-z]+)$ /user/user_recuperar_senha_ps2.php?dir=user_recuperar_senha_ps2&user_hash_recuperar_senha=$1
+RewriteRule ^user/logout$ /user/user_logout.php?dir=user_logout
+
+#perfil select
+RewriteRule ^user/perfil-select$ /user/user_perfil_select.php?dir=perfil_select
+RewriteRule ^user/perfil-select/([0-9]+)$ /user/user_perfil_select.php?dir=perfil_select&perfil_id=$1
+RewriteRule ^user/pagamento/([0-9]+)$ /user/user_pagamento.php?dir=user_pagamento&venda_collection_id=$1
+
+#revendedor
+RewriteRule ^revendedor/$ /revendedor/index.php?dir=revendedor_home
+RewriteRule ^revendedor/login$ /revendedor/revendedor_login.php?dir=revendedor_login
+RewriteRule ^revendedor/cadastro$ /revendedor/revendedor_cadastro.php?dir=revendedor_cadastro
+RewriteRule ^revendedor/recuperar-senha-ps-1$ /revendedor/revendedor_recuperar_senha_ps1.php?dir=revendedor_recuperar_senha_ps1
+RewriteRule ^revendedor/recuperar-senha-ps-2/([0-9-a-z-A-z]+)$ /revendedor/revendedor_recuperar_senha_ps2.php?dir=revendedor_recuperar_senha_ps2&revendedor_hash_recuperar_senha=$1
+RewriteRule ^revendedor/logout$ /revendedor/revendedor_logout.php?dir=revendedor_logout
+
+RewriteRule ^revendedor/perfil$ /revendedor/revendedor_perfil.php?dir=revendedor_perfil
+
+RewriteRule ^revendedor/usuarios/adicionar$ /revendedor/revendedor_usuarios_adicionar.php?dir=revendedor_usuarios_adicionar
+RewriteRule ^revendedor/usuarios/perfil/([0-9]+)$ /revendedor/revendedor_usuarios_perfil.php?dir=revendedor_usuarios_perfil&user_id=$1
+RewriteRule ^revendedor/usuarios/editar/([0-9]+)$ /revendedor/revendedor_usuarios_editar.php?dir=revendedor_usuarios_editar&user_id=$1
+
+
+
+#administracao
+RewriteRule ^admin/$ /admin/index.php?dir=admin_home 
+RewriteRule ^admin/login$ /admin/admin_login.php?dir=admin_login 
+RewriteRule ^admin/recuperar-senha-ps-1$ /admin/admin_recuperar_senha_ps1.php?dir=admin_recuperar_senha_ps1
+RewriteRule ^admin/recuperar-senha-ps-2/([0-9-a-z-A-Z]+)$ /admin/admin_recuperar_senha_ps2.php?dir=admin_recuperar_senha_ps2&admin_hash_recuperar_senha=$1
+RewriteRule ^admin/confirmacao-email/([0-9-a-z-A-Z]+)$ /admin/admin_confirmar_email.php?dir=admin_confirmar_email&admin_hash_confirmacao_email=$1
+
+
+#administradores
+RewriteRule ^admin/administradores/listar$ /admin/administradores_listar.php?dir=administradores_listar
+RewriteRule ^admin/administradores/adicionar$ /admin/administradores_adicionar.php?dir=administradores_adicionar
+RewriteRule ^admin/administradores/perfil/([0-9]+)$ /admin/administradores_perfil.php?dir=administradores_perfil&admin_id=$1
+RewriteRule ^admin/perfil/editar$ /admin/admin_editar_perfil.php?dir=admin_editar_perfil
+RewriteRule ^admin/perfil/alterar-senha$ /admin/admin_alterar_senha.php?dir=admin_alterar_senha
+RewriteRule ^admin/logout$ admin/admin_logout.php
+
+
+#revendedores
+RewriteRule ^admin/revendedores/listar$ /admin/revendedores_listar.php?dir=revendedores_listar
+RewriteRule ^admin/revendedores/adicionar$ /admin/revendedores_adicionar.php?dir=revendedores_adicionar
+RewriteRule ^admin/revendedores/perfil/([0-9]+)$ /admin/revendedores_perfil.php?dir=revendedores_perfil&revendedor_id=$1
+RewriteRule ^admin/revendedores/editar/([0-9]+)$ /admin/revendedores_editar.php?dir=revendedores_editar&revendedor_id=$1
+
+#configuracoes 
+RewriteRule ^admin/configuracoes/smtp$ /admin/site_smtp.php?dir=site_smtp
+RewriteRule ^admin/configuracoes/site-informacoes$ /admin/site_informacoes.php?dir=site_informacoes
+RewriteRule ^admin/configuracoes/site-imagens$ /admin/site_images.php?dir=site_images
+
+
+#carousel
+RewriteRule ^admin/carousel/([a-z]+)$ admin/carousel.php?dir=carousel&carousel_para=$1
+RewriteRule ^admin/carousel/([a-z]+)/adicionar$ admin/carousel_adicionar.php?dir=carousel_adicionar&carousel_para=$1
+RewriteRule ^admin/carousel/([a-z]+)/editar/([0-9]+)$ admin/carousel_editar.php?dir=carousel_editar&carousel_para=$1&carousel_id=$2
+
+
+
+#midia categoria
+RewriteRule ^admin/midia/categoria/listar$ /admin/midia_categoria_listar.php?dir=midia_categoria_listar
+RewriteRule ^admin/midia/categoria/adicionar$ /admin/midia_categoria_adicionar.php?dir=midia_categoria_adicionar
+RewriteRule ^admin/midia/categoria/([0-9-a-z]+)/editar/([0-9]+)$ /admin/midia_categoria_editar.php?dir=midia_categoria_editar&categoria_para=$1&categoria_id=$2
+
+#midia listar
+RewriteRule ^admin/midia/([a-z]+)/listar$ /admin/midia_listar.php?dir=midia_listar&midia_tipo=$1
+
+#midia comentarios
+RewriteRule ^admin/midia/comentarios$ /admin/midia_comentarios.php?dir=midia_comentarios
+
+#midia adicionar editar
+RewriteRule ^admin/midia/([a-z]+)/adicionar$ /admin/midia_adicionar.php?dir=midia_adicionar&midia_tipo=$1
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/editar$ /admin/midia_editar.php?dir=midia_editar&midia_tipo=$1&midia_id=$2
+
+#midia temporadas
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporadas/listar$ /admin/midia_temporadas_listar.php?dir=midia_temporadas&midia_tipo=$1&midia_id=$2
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/adicionar$ /admin/midia_temporadas_adicionar.php?dir=midia_temporadas_adicionar&midia_tipo=$1&midia_id=$2
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/editar$ /admin/midia_temporadas_editar.php?dir=midia_temporadas_adicionar&midia_tipo=$1&midia_id=$2&temporada_id=$3
+
+#midia episodios
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodios/listar$ /admin/midia_episodios_listar.php?dir=midia_episodios_listar&midia_tipo=$1&midia_id=$2&temporada_id=$3
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodio/adicionar$ /admin/midia_episodios_adicionar.php?dir=midia_episodios_adicionar&midia_tipo=$1&midia_id=$2&temporada_id=$3
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodio/([0-9]+)/editar$ /admin/midia_episodios_editar.php?dir=midia_episodios_editar&midia_tipo=$1&midia_id=$2&temporada_id=$3&episodio_id=$4
+
+#midia players
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodio/([0-9]+)/players/listar$ /admin/midia_players_listar.php?dir=midia_players_listar&midia_tipo=$1&midia_id=$2&temporada_id=$3&episodio_id=$4
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodio/([0-9]+)/player/adicionar$ /admin/midia_players_adicionar.php?dir=midia_players_adicionar&midia_tipo=$1&midia_id=$2&temporada_id=$3&episodio_id=$4
+RewriteRule ^admin/midia/([a-z]+)/([0-9]+)/temporada/([0-9]+)/episodio/([0-9]+)/player/([0-9]+)/editar$ /admin/midia_players_editar.php?dir=midia_players_editar&midia_tipo=$1&midia_id=$2&temporada_id=$3&episodio_id=$4&player_id=$5
+
+#planos de venda
+RewriteRule ^admin/planos-premium/listar$ /admin/planos_premium_listar.php?dir=planos_premium_listar
+RewriteRule ^admin/planos-premium/adicionar$ /admin/planos_premium_adicionar.php?dir=planos_premium_adicionar
+RewriteRule ^admin/planos-premium/premium/([0-9]+)/editar$ /admin/planos_premium_editar.php?dir=planos_premium_editar&premium_id=$1
+
+#monetizacao
+RewriteRule ^admin/monetizacao/listar$ /admin/site_monetizacao_listar.php?dir=site_monetizacao_listar
+RewriteRule ^admin/monetizacao/adicionar$ /admin/site_monetizacao_adicionar.php?dir=site_monetizacao_adicionar
+RewriteRule ^admin/monetizacao/([0-9]+)/editar$ /admin/site_monetizacao_editar.php?dir=site_monetizacao_editar&monetizacao_id=$1
+
+#admin usuarios
+RewriteRule ^admin/usuarios/listar$ /admin/usuarios_listar.php?dir=usuarios_listar
+RewriteRule ^admin/usuarios/adicionar$ /admin/usuarios_adicionar.php?dir=usuarios_adicionar
+RewriteRule ^admin/usuarios/perfil/([0-9]+)$ /admin/usuarios_perfil.php?dir=usuarios_perfil&user_id=$1
+
+#admin vendas
+RewriteRule ^admin/vendas/listar$ /admin/vendas.php?dir=vendas_listar
+
+#admin paginas
+RewriteRule ^admin/pagina/listar$ /admin/pagina_listar.php?dir=pagina_listar
+RewriteRule ^admin/pagina/adicionar$ /admin/pagina_adicionar.php?dir=pagina_adicionar
+RewriteRule ^admin/pagina/editar/([0-9]+)$ /admin/pagina_editar.php?dir=pagina_editar&pagina_id=$1
+
+
+#paginas listar
+RewriteRule ^paginas/listar$ /public/pagina_listar.php?dir=pagina_listar
+RewriteRule ^paginas/listar/([a-z-0-9]+)$ /public/pagina_info.php?dir=pagina_pagina_info&pagina_diretorio=$1
+
+#minha lista
+RewriteRule ^minha-lista$ /public/minha_lista.php?dir=minha_lista
+
+#public categorias
+RewriteRule ^categorias$ /public/midia_categorias.php?dir=midia_categorias
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)/pagina/([0-9]+)$ /public/midia_categoria.php?dir=midia_categoria&midia_tipo=$1&categoria_diretorio=$2&pagina=$3
+
+#busca
+RewriteRule ^busca/midia/([0-9-a-z-A-Z]+)/pagina/([0-9]+)$ /public/midia_busca.php?dir=midia_busca&midia_busca=$1&pagina=$2
+
+#listar midias por tipo
+RewriteRule ^([a-z]+)/pagina/([0-9]+)$ /public/midia_listar.php?dir=midia_listar&midia_tipo=$1&pagina=$2
+
+#midia
+RewriteRule ^([0-9-a-z]+)/([0-9-a-z]+)$ /public/midia.php?dir=midia&midia_tipo=$1&midia_diretorio=$2 

@@ -1,0 +1,76 @@
+@media screen and (max-width: 1400px){
+    .login .card{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1199px){
+    #page-fixed{
+        margin-left: 0px;
+    }  
+    #sidebar-left{
+        left: -270px;
+    }
+    #navbar-top{
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .login .card{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .login .card{
+        width: 80%;
+    }
+    .image-categoria-list{
+        width: 80px;
+        height: 50px;
+    }
+    .image-midia-change{
+        width: 150px;
+        height: 200px;
+    }
+    /* CARD NAV TABS */
+    .nav-tabs .nav-item{
+        width: 50%;
+    }
+    .nav-tabs .nav-item button{
+        width: 98%; 
+    } 
+}
+
+@media screen and (max-width: 600px){
+    .login .card{
+        width: 90%;
+    }
+    .login .btn{
+        width: 75%;
+    }
+    .image-carousel-adicionar-editar{
+        max-width: 100%;
+        min-height: 120px;
+        height: auto;
+    } 
+}
+
+
+@media screen and (max-width: 400px){
+    .login .card{
+        width: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 320px){
+    /* CARD NAV TABS */
+    .nav-tabs .nav-item{
+        width: 100%;
+    }
+    .nav-tabs .nav-item button{
+        width: 100%; 
+    }
+}
